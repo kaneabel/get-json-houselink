@@ -20,6 +20,10 @@
             <Work v-if="active === 'Work'" :clear="clearAll" @change="onChange($event)"></Work>
             <Material v-if="active === 'Material'" :clear="clearAll" @change="onChange($event)"></Material>
             <InvitedFromFavorite v-if="active === 'InvitedFromFavorite'" :clear="clearAll" @change="onChange($event)"></InvitedFromFavorite>
+            <Pricing v-if="active === 'Pricing'" :clear="clearAll" @change="onChange($event)"></Pricing>
+            <Affiliation v-if="active === 'Affiliation'" :clear="clearAll" @change="onChange($event)"></Affiliation>
+            <Finance v-if="active === 'Finance'" :clear="clearAll" @change="onChange($event)"></Finance>
+            <HouseLinkRanking v-if="active === 'HouseLinkRanking'" :clear="clearAll" @change="onChange($event)"></HouseLinkRanking>
           </div>
           <div class="col-md-6">
             <h1>Source tree</h1>
@@ -38,6 +42,10 @@ import Contact from './components/Contact';
 import Work from './components/Work';
 import Material from './components/Material';
 import InvitedFromFavorite from './components/InvitedFromFavorite';
+import Pricing from './components/Pricing';
+import Affiliation from './components/Affiliation';
+import Finance from './components/Finance';
+import HouseLinkRanking from './components/HouseLinkRanking';
 export default {
   name: 'app',
   components: {
@@ -45,6 +53,10 @@ export default {
     Work,
     Material,
     InvitedFromFavorite,
+    Pricing,
+    Affiliation,
+    Finance,
+    HouseLinkRanking
   },
   data () {
     return {
@@ -60,7 +72,11 @@ export default {
         { text: 'Contact' },
         { text: 'Work' },
         { text: 'Material' },
-        { text: 'InvitedFromFavorite' }
+        { text: 'InvitedFromFavorite' },
+        { text: 'Pricing' },
+        { text: 'Affiliation' },
+        { text: 'Finance' },
+        { text: 'HouseLinkRanking' }
       ]
     }
   },
@@ -77,7 +93,7 @@ export default {
           that.isCopied = false;
         }, 1000);
       }, (e) => {
-        alert('Can not copy')
+        alert('Can not copy');
         console.log(e)
       })
     },
